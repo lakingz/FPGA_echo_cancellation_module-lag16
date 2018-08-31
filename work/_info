@@ -1,0 +1,410 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dD:/WORKING_FOLDER/echo_cancelation/modelsim_ase/win32aloem
+vdouble_16b_tb
+Z0 !s110 1535747665
+!i10b 1
+!s100 3eFLI`@]YKUPN?m4AlUe[0
+I2D?4P]4GN333H0<?6oaNI3
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dD:/WORKING_FOLDER/echo_cancelation/AA_code
+w1535136142
+8D:/WORKING_FOLDER/echo_cancelation/AA_code/double_16b_tb.v
+FD:/WORKING_FOLDER/echo_cancelation/AA_code/double_16b_tb.v
+L0 2
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1535747665.000000
+!s107 D:/WORKING_FOLDER/echo_cancelation/AA_code/double_16b_tb.v|
+!s90 -##implicit##push_minusfile_path##|D:/WORKING_FOLDER/echo_cancelation/modelsim_ase/win32aloem/vlog.opt|-##implicit##pop_minusfile_path##|-reportprogress|300|-work|work|-stats=none|D:/WORKING_FOLDER/echo_cancelation/AA_code/double_16b_tb.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+vdouble_to_sig16b
+R0
+!i10b 1
+!s100 _Q9j:EjGoJh4GQ0nDWENn2
+Ikm^]I`U:oXmKziZSj9OPU1
+R1
+R2
+w1535668260
+8D:/WORKING_FOLDER/echo_cancelation/AA_code/double_to_sig16b.v
+FD:/WORKING_FOLDER/echo_cancelation/AA_code/double_to_sig16b.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/WORKING_FOLDER/echo_cancelation/AA_code/double_to_sig16b.v|
+!s90 -##implicit##push_minusfile_path##|D:/WORKING_FOLDER/echo_cancelation/modelsim_ase/win32aloem/vlog.opt|-##implicit##pop_minusfile_path##|-reportprogress|300|-work|work|-stats=none|D:/WORKING_FOLDER/echo_cancelation/AA_code/double_to_sig16b.v|
+!i113 1
+R5
+R6
+vecho_cancelation
+!s110 1535757897
+!i10b 1
+!s100 MfJ6;RBJo1c_hhn3DCf2G1
+I`h10=HIj?dI]DDLY0hZoO0
+R1
+R2
+w1535757895
+8D:/WORKING_FOLDER/echo_cancelation/AA_code/echo_cancelation_lag16.v
+FD:/WORKING_FOLDER/echo_cancelation/AA_code/echo_cancelation_lag16.v
+L0 5
+R3
+r1
+!s85 0
+31
+!s108 1535757896.000000
+!s107 D:/WORKING_FOLDER/echo_cancelation/AA_code/echo_cancelation_lag16.v|
+!s90 -##implicit##push_minusfile_path##|D:/WORKING_FOLDER/echo_cancelation/modelsim_ase/win32aloem/vlog.opt|-##implicit##pop_minusfile_path##|-reportprogress|300|-work|work|-stats=none|D:/WORKING_FOLDER/echo_cancelation/AA_code/echo_cancelation_lag16.v|
+!i113 1
+R5
+R6
+vecho_cancelation_full
+Z7 !s110 1535747666
+!i10b 1
+!s100 _X;A7GKk5T8clOH8Ee[1T3
+IV9P]6dlWFAlGf@R_:9j6J3
+R1
+R2
+w1535746526
+8D:/WORKING_FOLDER/echo_cancelation/AA_code/echo_cancelation_full.v
+FD:/WORKING_FOLDER/echo_cancelation/AA_code/echo_cancelation_full.v
+L0 7
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/WORKING_FOLDER/echo_cancelation/AA_code/echo_cancelation_full.v|
+!s90 -##implicit##push_minusfile_path##|D:/WORKING_FOLDER/echo_cancelation/modelsim_ase/win32aloem/vlog.opt|-##implicit##pop_minusfile_path##|-reportprogress|300|-work|work|-stats=none|D:/WORKING_FOLDER/echo_cancelation/AA_code/echo_cancelation_full.v|
+!i113 1
+R5
+R6
+vecho_cancelation_full_tb
+R7
+!i10b 1
+!s100 J6IPOD6S]_z=HHO@4cB0?3
+IQ9jhA_dV1^7LTe74UXll80
+R1
+R2
+w1535745443
+8D:/WORKING_FOLDER/echo_cancelation/AA_code/echo_cancelation_full_tb.v
+FD:/WORKING_FOLDER/echo_cancelation/AA_code/echo_cancelation_full_tb.v
+L0 2
+R3
+r1
+!s85 0
+31
+Z8 !s108 1535747666.000000
+!s107 D:/WORKING_FOLDER/echo_cancelation/AA_code/echo_cancelation_full_tb.v|
+!s90 -##implicit##push_minusfile_path##|D:/WORKING_FOLDER/echo_cancelation/modelsim_ase/win32aloem/vlog.opt|-##implicit##pop_minusfile_path##|-reportprogress|300|-work|work|-stats=none|D:/WORKING_FOLDER/echo_cancelation/AA_code/echo_cancelation_full_tb.v|
+!i113 1
+R5
+R6
+vfpu
+Z9 !s110 1535747664
+!i10b 1
+!s100 6<^bNNnNIB^CQV@kYNF=h1
+IRiSi0gzKNeEk;Vh?cn?MY1
+R1
+R2
+Z10 w1533066023
+8D:/WORKING_FOLDER/echo_cancelation/AA_code/fpu_package/fpu_double.v
+FD:/WORKING_FOLDER/echo_cancelation/AA_code/fpu_package/fpu_double.v
+L0 51
+R3
+r1
+!s85 0
+31
+Z11 !s108 1535747664.000000
+!s107 D:/WORKING_FOLDER/echo_cancelation/AA_code/fpu_package/fpu_double.v|
+!s90 -##implicit##push_minusfile_path##|D:/WORKING_FOLDER/echo_cancelation/modelsim_ase/win32aloem/vlog.opt|-##implicit##pop_minusfile_path##|-reportprogress|300|-work|work|-stats=none|D:/WORKING_FOLDER/echo_cancelation/AA_code/fpu_package/fpu_double.v|
+!i113 1
+R5
+R6
+vfpu_add
+R9
+!i10b 1
+!s100 mPUkb>SMHIXI9DY10M2EJ3
+I_AEcgoXaJd9:2Go@2ifmn2
+R1
+R2
+R10
+8D:/WORKING_FOLDER/echo_cancelation/AA_code/fpu_package/fpu_add.v
+FD:/WORKING_FOLDER/echo_cancelation/AA_code/fpu_package/fpu_add.v
+Z12 L0 37
+R3
+r1
+!s85 0
+31
+R11
+!s107 D:/WORKING_FOLDER/echo_cancelation/AA_code/fpu_package/fpu_add.v|
+!s90 -##implicit##push_minusfile_path##|D:/WORKING_FOLDER/echo_cancelation/modelsim_ase/win32aloem/vlog.opt|-##implicit##pop_minusfile_path##|-reportprogress|300|-work|work|-stats=none|D:/WORKING_FOLDER/echo_cancelation/AA_code/fpu_package/fpu_add.v|
+!i113 1
+R5
+R6
+vfpu_div
+R9
+!i10b 1
+!s100 [Gmo76b;S4B7Wd2:@ibiR2
+I91o6J<EdDkjFDK<k]W<CP2
+R1
+R2
+R10
+8D:/WORKING_FOLDER/echo_cancelation/AA_code/fpu_package/fpu_div.v
+FD:/WORKING_FOLDER/echo_cancelation/AA_code/fpu_package/fpu_div.v
+Z13 L0 38
+R3
+r1
+!s85 0
+31
+R11
+!s107 D:/WORKING_FOLDER/echo_cancelation/AA_code/fpu_package/fpu_div.v|
+!s90 -##implicit##push_minusfile_path##|D:/WORKING_FOLDER/echo_cancelation/modelsim_ase/win32aloem/vlog.opt|-##implicit##pop_minusfile_path##|-reportprogress|300|-work|work|-stats=none|D:/WORKING_FOLDER/echo_cancelation/AA_code/fpu_package/fpu_div.v|
+!i113 1
+R5
+R6
+vfpu_exceptions
+R0
+!i10b 1
+!s100 E5Jb_DMhW@7VRLZ4MO]G51
+IKeM6LLX4=lJc=AR48WgdX2
+R1
+R2
+R10
+8D:/WORKING_FOLDER/echo_cancelation/AA_code/fpu_package/fpu_exceptions.v
+FD:/WORKING_FOLDER/echo_cancelation/AA_code/fpu_package/fpu_exceptions.v
+R13
+R3
+r1
+!s85 0
+31
+R11
+!s107 D:/WORKING_FOLDER/echo_cancelation/AA_code/fpu_package/fpu_exceptions.v|
+!s90 -##implicit##push_minusfile_path##|D:/WORKING_FOLDER/echo_cancelation/modelsim_ase/win32aloem/vlog.opt|-##implicit##pop_minusfile_path##|-reportprogress|300|-work|work|-stats=none|D:/WORKING_FOLDER/echo_cancelation/AA_code/fpu_package/fpu_exceptions.v|
+!i113 1
+R5
+R6
+vfpu_mul
+R0
+!i10b 1
+!s100 o_h^K6d4YPXzl;07BK>?41
+I^nNWo0jRJiSj]]YBV0hnC1
+R1
+R2
+R10
+8D:/WORKING_FOLDER/echo_cancelation/AA_code/fpu_package/fpu_mul.v
+FD:/WORKING_FOLDER/echo_cancelation/AA_code/fpu_package/fpu_mul.v
+R13
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/WORKING_FOLDER/echo_cancelation/AA_code/fpu_package/fpu_mul.v|
+!s90 -##implicit##push_minusfile_path##|D:/WORKING_FOLDER/echo_cancelation/modelsim_ase/win32aloem/vlog.opt|-##implicit##pop_minusfile_path##|-reportprogress|300|-work|work|-stats=none|D:/WORKING_FOLDER/echo_cancelation/AA_code/fpu_package/fpu_mul.v|
+!i113 1
+R5
+R6
+vfpu_round
+R0
+!i10b 1
+!s100 Y<c;RiS:0DG3^[APOQHFm3
+I6K5leY<7:LPhCiMReTkAD3
+R1
+R2
+R10
+8D:/WORKING_FOLDER/echo_cancelation/AA_code/fpu_package/fpu_round.v
+FD:/WORKING_FOLDER/echo_cancelation/AA_code/fpu_package/fpu_round.v
+R13
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/WORKING_FOLDER/echo_cancelation/AA_code/fpu_package/fpu_round.v|
+!s90 -##implicit##push_minusfile_path##|D:/WORKING_FOLDER/echo_cancelation/modelsim_ase/win32aloem/vlog.opt|-##implicit##pop_minusfile_path##|-reportprogress|300|-work|work|-stats=none|D:/WORKING_FOLDER/echo_cancelation/AA_code/fpu_package/fpu_round.v|
+!i113 1
+R5
+R6
+vfpu_sub
+R0
+!i10b 1
+!s100 ifH>?TTGd?1Q2z8cHXkdl1
+IfQa9NSJ[?eTPmUPhaHNfj2
+R1
+R2
+R10
+8D:/WORKING_FOLDER/echo_cancelation/AA_code/fpu_package/fpu_sub.v
+FD:/WORKING_FOLDER/echo_cancelation/AA_code/fpu_package/fpu_sub.v
+L0 39
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/WORKING_FOLDER/echo_cancelation/AA_code/fpu_package/fpu_sub.v|
+!s90 -##implicit##push_minusfile_path##|D:/WORKING_FOLDER/echo_cancelation/modelsim_ase/win32aloem/vlog.opt|-##implicit##pop_minusfile_path##|-reportprogress|300|-work|work|-stats=none|D:/WORKING_FOLDER/echo_cancelation/AA_code/fpu_package/fpu_sub.v|
+!i113 1
+R5
+R6
+vfpu_tb
+R9
+!i10b 1
+!s100 EGQzB2:C>RJjYj=UT:zji2
+I?=6Nzn1=GW<@?hd:hN;md2
+R1
+R2
+w1231531300
+8D:/WORKING_FOLDER/echo_cancelation/AA_code/fpu_package/fpu_TB.v
+FD:/WORKING_FOLDER/echo_cancelation/AA_code/fpu_package/fpu_TB.v
+R12
+R3
+r1
+!s85 0
+31
+!s108 1535747662.000000
+!s107 D:/WORKING_FOLDER/echo_cancelation/AA_code/fpu_package/fpu_TB.v|
+!s90 -##implicit##push_minusfile_path##|D:/WORKING_FOLDER/echo_cancelation/modelsim_ase/win32aloem/vlog.opt|-##implicit##pop_minusfile_path##|-reportprogress|300|-work|work|-stats=none|D:/WORKING_FOLDER/echo_cancelation/AA_code/fpu_package/fpu_TB.v|
+!i113 1
+R5
+R6
+vlag_generator
+!s110 1535757827
+!i10b 1
+!s100 UmT]X_Fgc4jN@l3WZFf8K1
+IZ0VU7PY67ZINDmo[T9kZQ0
+R1
+R2
+w1535755786
+8D:/WORKING_FOLDER/echo_cancelation/AA_code/lag_generator_lag16.v
+FD:/WORKING_FOLDER/echo_cancelation/AA_code/lag_generator_lag16.v
+L0 10
+R3
+r1
+!s85 0
+31
+!s108 1535757827.000000
+!s107 D:/WORKING_FOLDER/echo_cancelation/AA_code/lag_generator_lag16.v|
+!s90 -##implicit##push_minusfile_path##|D:/WORKING_FOLDER/echo_cancelation/modelsim_ase/win32aloem/vlog.opt|-##implicit##pop_minusfile_path##|-reportprogress|300|-work|work|-stats=none|D:/WORKING_FOLDER/echo_cancelation/AA_code/lag_generator_lag16.v|
+!i113 1
+R5
+R6
+vpara_approx
+!s110 1535755538
+!i10b 1
+!s100 G<NDlImVZE>W=IJ9]2lK;2
+IUPYFeX]j2@VGUGa5fOXan1
+R1
+R2
+w1535755536
+8D:/WORKING_FOLDER/echo_cancelation/AA_code/para_approx_lag16.v
+FD:/WORKING_FOLDER/echo_cancelation/AA_code/para_approx_lag16.v
+L0 9
+R3
+r1
+!s85 0
+31
+!s108 1535755538.000000
+!s107 D:/WORKING_FOLDER/echo_cancelation/AA_code/para_approx_lag16.v|
+!s90 -##implicit##push_minusfile_path##|D:/WORKING_FOLDER/echo_cancelation/modelsim_ase/win32aloem/vlog.opt|-##implicit##pop_minusfile_path##|-reportprogress|300|-work|work|-stats=none|D:/WORKING_FOLDER/echo_cancelation/AA_code/para_approx_lag16.v|
+!i113 1
+R5
+R6
+vsig16b_to_double
+R7
+!i10b 1
+!s100 2X9_@Z3OV_oGL9HRf7XWZ3
+IAL=50:c6PnNE1Id<K1UH`0
+R1
+R2
+w1535178693
+8D:/WORKING_FOLDER/echo_cancelation/AA_code/sig16b_to_double.v
+FD:/WORKING_FOLDER/echo_cancelation/AA_code/sig16b_to_double.v
+L0 3
+R3
+r1
+!s85 0
+31
+R8
+!s107 D:/WORKING_FOLDER/echo_cancelation/AA_code/sig16b_to_double.v|
+!s90 -##implicit##push_minusfile_path##|D:/WORKING_FOLDER/echo_cancelation/modelsim_ase/win32aloem/vlog.opt|-##implicit##pop_minusfile_path##|-reportprogress|300|-work|work|-stats=none|D:/WORKING_FOLDER/echo_cancelation/AA_code/sig16b_to_double.v|
+!i113 1
+R5
+R6
+vsignal_generator
+R7
+!i10b 1
+!s100 XMOKjb98h0_]TDRoML^jE2
+IDUWHX6G7C1RaNX8Q0eUBd0
+R1
+R2
+w1535117889
+8D:/WORKING_FOLDER/echo_cancelation/AA_code/signal_generator.v
+FD:/WORKING_FOLDER/echo_cancelation/AA_code/signal_generator.v
+L0 8
+R3
+r1
+!s85 0
+31
+R8
+!s107 D:/WORKING_FOLDER/echo_cancelation/AA_code/signal_generator.v|
+!s90 -##implicit##push_minusfile_path##|D:/WORKING_FOLDER/echo_cancelation/modelsim_ase/win32aloem/vlog.opt|-##implicit##pop_minusfile_path##|-reportprogress|300|-work|work|-stats=none|D:/WORKING_FOLDER/echo_cancelation/AA_code/signal_generator.v|
+!i113 1
+R5
+R6
+vtb_all
+R7
+!i10b 1
+!s100 ;k4m:zS3_4FfYCCoNY?1z3
+IR8ESC2if[?n0jHzaf`1I^2
+R1
+R2
+w1535743895
+8D:/WORKING_FOLDER/echo_cancelation/AA_code/tb_all.v
+FD:/WORKING_FOLDER/echo_cancelation/AA_code/tb_all.v
+L0 7
+R3
+r1
+!s85 0
+31
+R8
+!s107 D:/WORKING_FOLDER/echo_cancelation/AA_code/tb_all.v|
+!s90 -##implicit##push_minusfile_path##|D:/WORKING_FOLDER/echo_cancelation/modelsim_ase/win32aloem/vlog.opt|-##implicit##pop_minusfile_path##|-reportprogress|300|-work|work|-stats=none|D:/WORKING_FOLDER/echo_cancelation/AA_code/tb_all.v|
+!i113 1
+R5
+R6
+vZZZ_TB_4_TEST
+R0
+!i10b 1
+!s100 ahehEh990IW@IK:GPXfG]3
+I0^d2nAl?YPiMF4BlUclag2
+R1
+R2
+w1535076035
+8D:/WORKING_FOLDER/echo_cancelation/AA_code/ZZZ_TB_4_TEST.v
+FD:/WORKING_FOLDER/echo_cancelation/AA_code/ZZZ_TB_4_TEST.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/WORKING_FOLDER/echo_cancelation/AA_code/ZZZ_TB_4_TEST.v|
+!s90 -##implicit##push_minusfile_path##|D:/WORKING_FOLDER/echo_cancelation/modelsim_ase/win32aloem/vlog.opt|-##implicit##pop_minusfile_path##|-reportprogress|300|-work|work|-stats=none|D:/WORKING_FOLDER/echo_cancelation/AA_code/ZZZ_TB_4_TEST.v|
+!i113 1
+R5
+R6
+n@z@z@z_@t@b_4_@t@e@s@t
