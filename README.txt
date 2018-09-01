@@ -34,45 +34,41 @@ author: David Lundgren
 	Doulbe_FPU.PDF (instructor)
 
 Document:
-	
-	LSM_algorithm_demo.Rmd 
+
+	LSM_algorithm_demo.Rmd
 	LSM_algorithm_demo.pdf (Testing LSM algorithm preformers)
 	Description.pdf (More detailed description)
-	
+
 Usage:
 
-	Open "echo_cancelation.mpf" to open the whole package. 
+	Open "echo_cancelation.mpf" to open the whole package.
 	tpye in transcript:
-	vsim -gui work.echo_cancelation_full_tb	
+	vsim -gui work.echo_cancelation_full_tb
 	add wave -position insertpoint sim:/echo_cancelation_full_tb/*
 	run {480 ms}
-	
+
 	"sig16b_without_echo" is the output we are looking at.
 
 Note:
 	time for task completion
 	fpu package
-	- 1. addition : 		(20 clock cycles/60 clks) 
-	- 2. subtraction: 		(21 clock cycles/60 clks) 
-	- 3. multiplication: 		(24 clock cycles/60 clks) 
+	- 1. addition : 		(20 clock cycles/60 clks)
+	- 2. subtraction: 		(21 clock cycles/60 clks)
+	- 3. multiplication: 		(24 clock cycles/60 clks)
 	- 4. division: 			(71 clock cycles/160 clks)
-	- 5. exception/ rounding        (1  clock cycles/2  clks)	
+	- 5. exception/ rounding        (1  clock cycles/2  clks)
 
 	main module
-	- 1. echo_cancelation: 		(4 sampling cycles, 160 operation cycles/320 clks)
-	- 2. lag_generator: 		(4 sampling cycles, 130 operation cycles/260 clks)
-	- 3. para_approx: 		(4 sampling cycles, 310 operation cycles/620 clks)
+	- 1. echo_cancelation: 		(16 sampling cycles, 250 operation cycles/500 clks)
+	- 2. lag_generator: 		(16 sampling cycles, 200 operation cycles/400 clks)
+	- 3. para_approx: 		(16 sampling cycles, 600 operation cycles/1200 clks)
 	- 4. sig16b_to_double: 		(50 operation clock cycles)
 
 
-LSM example:
+LSM example (lag 4):
 
 	e = signal_lag - (lag_0 * parat_0 + lag_1 * parat_1 + lag_2 * parat_2);
 	parat_0 <= parat_0 + mu / (gamma + lag_0**2 + lag_1**2 + lag_2**2) * lag_0 * e;
 	parat_1 <= parat_1 + mu / (gamma + lag_0**2 + lag_1**2 + lag_2**2) * lag_1 * e;
 	parat_2 <= parat_2 + mu / (gamma + lag_0**2 + lag_1**2 + lag_2**2) * lag_2 * e;
 	parat_3 <= parat_3 + mu / (gamma + lag_0**2 + lag_1**2 + lag_2**2) * lag_3 * e;
-
-
-
-

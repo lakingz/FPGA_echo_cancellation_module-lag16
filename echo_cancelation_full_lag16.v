@@ -1,10 +1,10 @@
-//echo_cancelation_full 
+//echo_cancelation_full_lag16
 //ankai liu
-//takes at least 950 for proper outputs.
+//takes at least ??? for proper outputs.
 
 
 `timescale 1us / 1us
-module echo_cancelation_full (
+module echo_cancelation_full_lag16 (
 	sig16b,
 	sig16b_lag,
 	clk_operation,
@@ -17,7 +17,19 @@ module echo_cancelation_full (
 		para_approx_0,
 		para_approx_1,
 		para_approx_2,
-		para_approx_3
+		para_approx_3,
+		para_approx_4,
+		para_approx_5,
+		para_approx_6,
+		para_approx_7,
+		para_approx_8,
+		para_approx_9,
+		para_approx_10,
+		para_approx_11,
+		para_approx_12,
+		para_approx_13,
+		para_approx_14,
+		para_approx_15
 );
 
 
@@ -26,7 +38,7 @@ input rst,clk_operation,enable;
 input [15:0] sig16b,sig16b_lag;
 output wire [15:0] sig16b_without_echo;
 output integer iteration;
-output wire [63:0] para_approx_0,para_approx_1,para_approx_2,para_approx_3;
+output wire [63:0] para_approx_0,para_approx_1,para_approx_2,para_approx_3,para_approx_4,para_approx_5,para_approx_6,para_approx_7,para_approx_8,para_approx_9,para_approx_10,para_approx_11,para_approx_12,para_approx_13,para_approx_14,para_approx_15;
 
 reg enable_MUT1,enable_MUT2,enable_MUT3,enable_MUT4,enable_MUT5;
 wire [63:0] sig_double,sig_lag_double;
@@ -41,13 +53,13 @@ reg [63:0] double_MUT5;
 
 
 always @(posedge clk_operation) begin
-	if (rst) begin 
+	if (rst) begin
 		iteration = 0;
 		enable_para_approx <= 1;
-		
+
 		enable_sampling_MUT3 <= 0;
 		enable_sampling_MUT4 <= 0;
-		#8000;	
+		#8000;
 		enable_sampling_MUT3 <= 0;
 		enable_sampling_MUT4 <= 1;
 		#8000;
@@ -76,40 +88,64 @@ sig16b_to_double MUT2(
 		.ready(ready_MUT2)
 );
 
-para_approx MUT3(
+para_approx_lag16 MUT3(
 	.rst(rst),
 	.sampling_cycle_counter(sampling_cycle_counter),
 	.clk_operation(clk_operation),
 	.enable_sampling(enable_sampling_MUT3),
 	.enable(enable_MUT3),
-	.signal(sig_double), 
+	.signal(sig_double),
 	.signal_lag(sig_lag_double),
-	.gamma(64'b0011111111010000000000000000000000000000000000000000000000000000), 
+	.gamma(64'b0011111111010000000000000000000000000000000000000000000000000000),
 //default      64'b0 01111111101 0000000000000000000000000000000000000000000000000000; //0.01
-	.mu(64'b0011111111110000000000000000000000000000000000000000000000000000),	 
+	.mu(64'b0011111111110000000000000000000000000000000000000000000000000000),
 //default   64'b0 01111111111 0000000000000000000000000000000000000000000000000000; //1
-		.para_0(para_approx_0), 
-		.para_1(para_approx_1), 
+		.para_0(para_approx_0),
+		.para_1(para_approx_1),
 		.para_2(para_approx_2),
 		.para_3(para_approx_3),
+		.para_4(para_approx_4),
+		.para_5(para_approx_5),
+		.para_6(para_approx_6),
+		.para_7(para_approx_7),
+		.para_8(para_approx_8),
+		.para_9(para_approx_9),
+		.para_10(para_approx_10),
+		.para_11(para_approx_11),
+		.para_12(para_approx_12),
+		.para_13(para_approx_13),
+		.para_14(para_approx_14),
+		.para_15(para_approx_15),
 		.e(e),
 		.e_exp(e_exp),
 		.normalize_amp_exp(normalize_amp_exp),
 		.ready(ready_MUT3)
 );
 
-echo_cancelation MUT4(
+echo_cancelation_lag16 MUT4(
 	.rst(rst),
 	.sampling_cycle_counter(sampling_cycle_counter),
 	.clk_operation(clk_operation),
 	.enable_sampling(enable_sampling_MUT4),
 	.enable(enable_MUT4),
 	.signal_receive(sig_lag_double),
-	.signal_send(sig_double), 
-	.para_0(para_approx_0), 
-	.para_1(para_approx_1), 
+	.signal_send(sig_double),
+	.para_0(para_approx_0),
+	.para_1(para_approx_1),
 	.para_2(para_approx_2),
 	.para_3(para_approx_3),
+	.para_4(para_approx_4),
+	.para_5(para_approx_5),
+	.para_6(para_approx_6),
+	.para_7(para_approx_7),
+	.para_8(para_approx_8),
+	.para_9(para_approx_9),
+	.para_10(para_approx_10),
+	.para_11(para_approx_11),
+	.para_12(para_approx_12),
+	.para_13(para_approx_13),
+	.para_14(para_approx_14),
+	.para_15(para_approx_15),
 		.signal_without_echo(signal_without_echo),
 		.signal_without_echo_exp(signal_without_echo_exp),
 		.ready(ready_MUT4)
@@ -119,7 +155,7 @@ double_to_sig16b MUT5(
 	.sampling_cycle_counter(sampling_cycle_counter),
 	.clk_operation(clk_operation),
 	.rst(rst),
-	.enable(enable_MUT5),		
+	.enable(enable_MUT5),
 	.double(double_MUT5),
 		.sig16b(sig16b_without_echo)
 );
@@ -130,22 +166,22 @@ always @(posedge clk_operation) begin
 		if (sampling_cycle_counter == 0) begin
 			enable_MUT1 <= 1;
 			enable_MUT2 <= 1;
-			#4            //double operation clk       
+			#4            //double operation clk
 			enable_MUT1 <= 0;
 			enable_MUT2 <= 0;
 			#50
 			if (ready_MUT1&ready_MUT2) begin
 				enable_MUT3 <= 1;
-				#4 
+				#4
 				enable_MUT3 <= 0;
 			end
-			#620
+			#1200
 			if (ready_MUT3) begin
 				enable_MUT4 <= 1;
-				#4 
+				#4
 				enable_MUT4 <= 0;
 			end
-			#330
+			#500
 			if (ready_MUT4) begin
 				enable_MUT5 <= 1;
 				double_MUT5 <= e;
@@ -157,16 +193,16 @@ always @(posedge clk_operation) begin
 		if (sampling_cycle_counter == 0) begin
 			enable_MUT1 <= 1;
 			enable_MUT2 <= 1;
-			#4            //double operation clk       
+			#4            //double operation clk
 			enable_MUT1 <= 0;
 			enable_MUT2 <= 0;
 			#50
 			if (ready_MUT1&ready_MUT2) begin
 				enable_MUT4 <= 1;
-				#4 
+				#4
 				enable_MUT4 <= 0;
 			end
-			#330
+			#500
 			if (ready_MUT4) begin
 				enable_MUT5 <= 1;
 				double_MUT5 <= signal_without_echo;
