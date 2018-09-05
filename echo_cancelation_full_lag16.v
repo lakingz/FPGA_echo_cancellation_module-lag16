@@ -1,6 +1,6 @@
 //echo_cancelation_full_lag16
 //ankai liu
-//takes at least ??? for proper outputs.
+//takes at least 1800 for proper outputs.
 
 
 `timescale 1us / 1us
@@ -12,6 +12,8 @@ module echo_cancelation_full_lag16 (
 	sampling_cycle_counter,
 	rst,
 	enable,
+	set_max_iteration,
+		iteration,
 		sig16b_without_echo,
 		iteration,
 		para_approx_0,
@@ -36,8 +38,9 @@ module echo_cancelation_full_lag16 (
 input [12:0] sampling_cycle, sampling_cycle_counter;
 input rst,clk_operation,enable;
 input [15:0] sig16b,sig16b_lag;
+input [12:0] set_max_iteration;
+output reg [12:0] iteration = 0;
 output wire [15:0] sig16b_without_echo;
-output integer iteration;
 output wire [63:0] para_approx_0,para_approx_1,para_approx_2,para_approx_3,para_approx_4,para_approx_5,para_approx_6,para_approx_7,para_approx_8,para_approx_9,para_approx_10,para_approx_11,para_approx_12,para_approx_13,para_approx_14,para_approx_15;
 
 reg enable_MUT1,enable_MUT2,enable_MUT3,enable_MUT4,enable_MUT5;
@@ -47,6 +50,7 @@ wire [10:0] signal_without_echo_exp;
 wire ready_MUT1,ready_MUT2,ready_MUT3;
 wire [10:0] e_exp,normalize_amp_exp;
 wire [63:0] e;
+reg [63:0] sig_double_MUT3,sig_lag_double_MUT3,sig_lag_double_MUT4,sig_double_MUT4;
 reg enable_sampling_MUT3, enable_sampling_MUT4;
 reg enable_para_approx;
 reg [63:0] double_MUT5;
@@ -56,21 +60,11 @@ always @(posedge clk_operation) begin
 	if (rst) begin
 		iteration = 0;
 		enable_para_approx <= 1;
-
-		enable_sampling_MUT3 <= 0;
-		enable_sampling_MUT4 <= 0;
-		#8000;
-		enable_sampling_MUT3 <= 0;
-		enable_sampling_MUT4 <= 1;
-		#8000;
-		enable_sampling_MUT3 <= 1;
-		enable_sampling_MUT4 <= 1;
-		#400000
-		enable_para_approx <= 0;
 	end
+	if (iteration >= set_max_iteration) enable_para_approx <= 0;
 end
 
-sig16b_to_double MUT1(
+sig16b_to_double MUT1(				//#50
 	.clk_operation(clk_operation),
 	.rst(rst),
 	.sig16b(sig16b),
@@ -79,7 +73,7 @@ sig16b_to_double MUT1(
 		.ready(ready_MUT1)
 );
 
-sig16b_to_double MUT2(
+sig16b_to_double MUT2(				//50
 	.clk_operation(clk_operation),
 	.rst(rst),
 	.sig16b(sig16b_lag),
@@ -88,14 +82,14 @@ sig16b_to_double MUT2(
 		.ready(ready_MUT2)
 );
 
-para_approx_lag16 MUT3(
+para_approx_lag16 MUT3(			//1200
 	.rst(rst),
 	.sampling_cycle_counter(sampling_cycle_counter),
 	.clk_operation(clk_operation),
 	.enable_sampling(enable_sampling_MUT3),
 	.enable(enable_MUT3),
-	.signal(sig_double),
-	.signal_lag(sig_lag_double),
+	.signal(sig_double_MUT3),
+	.signal_lag(sig_lag_double_MUT3),
 	.gamma(64'b0011111111010000000000000000000000000000000000000000000000000000),
 //default      64'b0 01111111101 0000000000000000000000000000000000000000000000000000; //0.01
 	.mu(64'b0011111111110000000000000000000000000000000000000000000000000000),
@@ -122,14 +116,14 @@ para_approx_lag16 MUT3(
 		.ready(ready_MUT3)
 );
 
-echo_cancelation_lag16 MUT4(
+echo_cancelation_lag16 MUT4(			//500
 	.rst(rst),
 	.sampling_cycle_counter(sampling_cycle_counter),
 	.clk_operation(clk_operation),
 	.enable_sampling(enable_sampling_MUT4),
 	.enable(enable_MUT4),
-	.signal_receive(sig_lag_double),
-	.signal_send(sig_double),
+	.signal_receive(sig_lag_double_MUT4),
+	.signal_send(sig_double_MUT4),
 	.para_0(para_approx_0),
 	.para_1(para_approx_1),
 	.para_2(para_approx_2),
@@ -171,7 +165,13 @@ always @(posedge clk_operation) begin
 			enable_MUT2 <= 0;
 			#50
 			if (ready_MUT1&ready_MUT2) begin
+				sig_double_MUT3 <= sig_double;
+				sig_double_MUT3 <= sig_lag_double;
+				sig_lag_double_MUT4 <= sig_lag_double;
+				sig_double_MUT4 <= sig_double;
 				enable_MUT3 <= 1;
+				enable_sampling_MUT3 <= 1;
+				enable_sampling_MUT4 <= 1;
 				#4
 				enable_MUT3 <= 0;
 			end
@@ -198,6 +198,12 @@ always @(posedge clk_operation) begin
 			enable_MUT2 <= 0;
 			#50
 			if (ready_MUT1&ready_MUT2) begin
+				sig_double_MUT3 <= sig_double;
+				sig_lag_double_MUT3 <= sig_lag_double;
+				sig_lag_double_MUT4 <= sig_lag_double;
+				sig_double_MUT4 <= sig_double;
+				enable_sampling_MUT3 <= 1;
+				enable_sampling_MUT4 <= 1;
 				enable_MUT4 <= 1;
 				#4
 				enable_MUT4 <= 0;

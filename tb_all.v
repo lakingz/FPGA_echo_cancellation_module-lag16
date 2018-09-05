@@ -22,13 +22,15 @@ reg [63:0] para_in_0,para_in_1,para_in_2,para_in_3,para_in_4,para_in_5,para_in_6
 wire [63:0] para_0,para_1,para_2,para_3;
 wire [10:0] e_exp,normalize_amp_exp;
 wire [63:0] e;
-integer iteration;
+
+reg [10:0] set_max_iteration,iteration;
 reg enable_sampling_MUT2, enable_sampling_MUT3, enable_sampling_MUT4;
 reg enable_para_approx;
 reg [63:0] double_MUT5;
 wire [15:0] sig16b_MUT5;          //final output
 
 initial begin
+set_max_iteration = 512;
 clk_operation = 1;
 enable_para_approx = 1;
 sampling_cycle = 4000;
@@ -102,8 +104,6 @@ para_in_15[51:0] = $urandom;
 
 iteration = 0;
 
-#400000
-enable_para_approx <= 0;
 end
 
 always #1 begin
@@ -232,17 +232,9 @@ double_to_sig16b MUT5(
 );
 
 initial begin
-	enable_sampling_MUT2 <= 0;
+	enable_sampling_MUT2 <= 1;
 	enable_sampling_MUT3 <= 0;
 	enable_sampling_MUT4 <= 0;
-	#8000;
-	enable_sampling_MUT2 <= 1;
-	enable_sampling_MUT3 <= 0;
-	enable_sampling_MUT4 <= 1;
-	#8000;
-	enable_sampling_MUT2 <= 1;
-	enable_sampling_MUT3 <= 1;
-	enable_sampling_MUT4 <= 1;
 end
 
 always @(posedge clk_operation) begin
@@ -265,6 +257,9 @@ always @(posedge clk_operation) begin
 				enable_MUT3 <= 1;
 				#4
 				enable_MUT3 <= 0;
+				enable_sampling_MUT2 <= 1;
+				enable_sampling_MUT3 <= 1;
+				enable_sampling_MUT4 <= 1;
 			end
 			#1200
 			if (ready_MUT3) begin
@@ -289,6 +284,9 @@ always @(posedge clk_operation) begin
 );*/
 			end
 			#400
+			enable_sampling_MUT2 <= 1;
+			enable_sampling_MUT3 <= 1;
+			enable_sampling_MUT4 <= 1;
 			enable_MUT4 <= 1;
 			enable_MUT5 <= 1;
 
@@ -302,4 +300,9 @@ always @(posedge clk_operation) begin
 		end
 	end
 end
+
+always @(posedge clk_operation) begin
+	if (iteration >= set_max_iteration) enable_para_approx <= 0;
+end
+
 endmodule //tb_all
